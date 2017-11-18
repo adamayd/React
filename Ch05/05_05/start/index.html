@@ -9,6 +9,28 @@
     <body>
         <div id='react-container'></div>
         <script type="text/babel">
+            var Box = React.createClass({
+                getInitialState() {
+                    return {
+                        backgroundColor: 'blue',
+                        height: 200,
+                        width: 200
+                    }
+                },
+                update() {
+                    this.setState({backgroundColor: 'red'})
+                },
+                componentDidUpdate() {
+                    alert('component did update')
+                },
+                render() {
+                    return (<div style={this.state}
+                                onClick={this.update}></div>)
+                }
+            })
+
+            ReactDOM.render(<Box />, document.getElementById('react-container'))
+
 
         </script>
 
