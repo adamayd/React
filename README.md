@@ -8,4 +8,15 @@ This course is featured on Lynda.com.  This is my personal repo of the cumulativ
 
 Generally I've found this course to be a nice on ramp to more in depth courses on React.
 
+## Notes on Completion of course
+
+The course moves at a fast past and you cover a lot of ground in under 2 hours.  The most unfortunate part is that Chapter 6 has become outdated because **create-react-app** now uses React 16.  Using the following items I was able to get the app to compile successfully, but the render keeps failing.  I will revisit this app at later times and debug more as I become more proficient in React 16.
+
+### Conversion to React 16
+
+* Include ```import React, { Component } from 'react'```
+* Change ```createClass```'s to ```class YOURCLASS extends Component```
+* Remove commas from functions
+* ```propTypes``` doesn't work.  I commented it out for the time being.
+
 
