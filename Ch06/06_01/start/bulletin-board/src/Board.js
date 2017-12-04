@@ -94,7 +94,7 @@ class Board extends Component {
                     id={note.id} 
                     onChange={this.update} 
                     onRemove={this.remove}>
-                  {note.note}
+                    {note.note}
               </Note>)
   }
 
