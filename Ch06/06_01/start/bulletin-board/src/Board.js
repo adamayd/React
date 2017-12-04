@@ -20,7 +20,7 @@ import Note from './Note';
 //   }
 // }
 
-class Board extends Component{
+class Board extends Component {
 //   propTypes: {
 //       count: function(props, propName) {
 //           if(typeof props[propName] != 'number') {
@@ -31,10 +31,17 @@ class Board extends Component{
 //           }
 //       }
 //   },
-  getInitialState() {
-      return {
-          notes: []
-      }
+//   getInitialState() {
+//       return {
+//           notes: []
+//       }
+//   }
+
+  constructor(props) { //replaces getInitialState above
+      super(props)
+        this.state = {
+            notes: []
+        }
   }
 
   componentWillMount() {
@@ -65,6 +72,7 @@ class Board extends Component{
               note: text
           }
       ]
+      console.log(notes)
       this.setState({notes})
   }
 
