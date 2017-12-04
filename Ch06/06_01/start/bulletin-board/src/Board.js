@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import React, { Component, PropTypes } from 'react'; // Still trying to fix proptypes
 // import React from 'react' //used in the tutorial but trying to upgrade app to R16
 // import logo from './logo.svg';
 import './App.css';
@@ -104,6 +105,17 @@ class Board extends Component {
                   <button onClick={() => this.add('New Note')}>+</button>
               </div>)
   }
+}
+
+Board.propTypes = {
+    count: function(props, propName) {
+        if(typeof props[propName] !== 'number') {
+            return new Error('The count must be a number!')
+        }
+        if(props[propName] > 100) {
+            return new Error('Creating ' + props[propName] + ' notes is ridiculous!')
+        }
+    }
 }
 
 export default Board;
