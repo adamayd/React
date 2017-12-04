@@ -24,7 +24,10 @@
     "webpack-dev-server": "1.16.2"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "15.3.2",
-    "react-dom": "15.3.2"
-  }  
+    "react-dom": "15.3.2",
+    "react-icon-base": "^2.1.1",
+    "react-icons": "^2.2.7"
+  }
 }
