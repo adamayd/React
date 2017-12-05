@@ -5,9 +5,16 @@ import Draggable from 'react-draggable';
 
 
 class Note extends Component {
-    getInitialState() {
-        return {editing: false}
+    constructor(props) {
+        super(props)
+        this.state = {
+            editing: false
+        }
     }
+
+    // getInitialState() {
+    //     return {editing: false}
+    // }
     
     componentWillMount() {
         this.style = {

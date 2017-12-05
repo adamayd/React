@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import React, { Component, PropTypes } from 'react'; // Still trying to fix proptypes
 // import React from 'react' //used in the tutorial but trying to upgrade app to R16
 // import logo from './logo.svg';
@@ -21,7 +21,7 @@ import Note from './Note';
 //   }
 // }
 
-class Board extends Component {
+class Board extends React.Component {
 //   propTypes: {
 //       count: function(props, propName) {
 //           if(typeof props[propName] != 'number') {
@@ -40,9 +40,9 @@ class Board extends Component {
 
   constructor(props) { //replaces getInitialState above
       super(props)
-        this.state = {
-            notes: []
-        }
+      this.state = {notes: []}
+      this.update = this.update.bind(this)
+      this.remove = this.remove.bind(this)
   }
 
   componentWillMount() {
@@ -92,9 +92,9 @@ class Board extends Component {
 
   eachNote(note) {
       return (<Note key={note.id}  
-                    id={note.id} 
-                    onChange={this.update} 
-                    onRemove={this.remove}>
+                    id={note.id}
+                    onChange={console.log('Changing') /*this.update */} 
+                    onRemove={console.log('Removing') /* this.remove */}>
                     {note.note}
               </Note>)
   }
