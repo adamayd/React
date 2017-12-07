@@ -41,8 +41,6 @@ class Board extends React.Component {
   constructor(props) { //replaces getInitialState above
       super(props)
       this.state = {notes: []}
-      this.update = this.update.bind(this)
-      this.remove = this.remove.bind(this)
   }
 
   componentWillMount() {
@@ -60,12 +58,12 @@ class Board extends React.Component {
       }
   }
 
-  nextId() {
+  nextId = () => {
       this.uniqueId = this.uniqueId || 0
       return this.uniqueId++
   }
 
-  add(text) {
+  add = (text) => {
       var notes = [
           ...this.state.notes,
           {
@@ -77,24 +75,24 @@ class Board extends React.Component {
       this.setState({notes})
   }
 
-  update(newText, id) {
+  update = (newText, id) => {
       var notes = this.state.notes.map(
           note => (note.id !== id) ? note : {...note, note: newText}
       )
       this.setState({notes})
   }
 
-  remove(id) {
+  remove = (id) => {
       var notes = this.state.notes.filter(
           note => note.id !== id)
       this.setState({notes})
   }
 
-  eachNote(note) {
+  eachNote = (note) => {
       return (<Note key={note.id}  
                     id={note.id}
-                    onChange={console.log('Changing') /*this.update */} 
-                    onRemove={console.log('Removing') /* this.remove */}>
+                    onChange={this.update} 
+                    onRemove={this.remove}>
                     {note.note}
               </Note>)
   }
