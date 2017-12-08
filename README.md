@@ -10,13 +10,15 @@ Generally I've found this course to be a nice on ramp to more in depth courses o
 
 ## Notes on Completion of course
 
-The course moves at a fast past and you cover a lot of ground in under 2 hours.  The most unfortunate part is that Chapter 6 has become outdated because **create-react-app** now uses React 16.  Using the following items I was able to get the app to compile successfully, but the render keeps failing.  I will revisit this app at later times and debug more as I become more proficient in React 16.
+The course moves at a fast past and you cover a lot of ground in under 2 hours.  The most unfortunate part is that Chapter 6 has become outdated if you use **create-react-app** without a version as the default now uses React 16.  Using the following items I was able to get the app to compile successfully and render but some of the funcionality is still wonky.  I will revisit this app at later times and debug more as I become more proficient in React.
 
-### Conversion to React 16
+### Conversion to React 16/ES6
 
-* Include ```import React, { Component } from 'react'```
-* Change ```createClass```'s to ```class YOURCLASS extends Component```
-* Remove commas from functions
-* ```propTypes``` doesn't work.  I commented it out for the time being.
+* Include ```import React, { Component, PropTypes } from 'react'```
+* Change ```createClass```'s to ```class YOURCLASS extends Component``` or ```React.Component``` if you just used ```React``` in your import statement
+* Remove commas from ends of functions
+* ```propTypes``` must be updated to ES6 to work properly
+* Add a constructor(props)
+* I tried unsuccessfully to bind my functions in constructor, but still received property undefined errors so I used arrow functions instead.  It worked, but I still don't know why binding didn't work.
 
-
+From here on out I am just going to update progress in the README.md but I will use github's issue tracker as I find them until the application is working correctly again.
