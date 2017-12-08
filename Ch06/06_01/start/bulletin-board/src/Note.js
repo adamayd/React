@@ -38,11 +38,11 @@ class Note extends Component {
         return (x + Math.ceil(Math.random() * (y - x))) + s
     }
 
-    edit() {
+    edit = () => {
         this.setState({editing: true})
     }
 
-    save() {
+    save = () => {
         // var val = this.refs.newText.value
         // alert('Later we will save this value: ' + val)
         // this.setState({editing: false})
@@ -50,7 +50,7 @@ class Note extends Component {
         this.setState({editing: false})
     }
 
-    remove() {
+    remove = () => {
         // alert('removing note')
         this.props.onRemove(this.props.id)
     }

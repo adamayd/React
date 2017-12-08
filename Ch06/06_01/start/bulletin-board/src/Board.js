@@ -71,7 +71,7 @@ class Board extends React.Component {
               note: text
           }
       ]
-      console.log(notes)
+    //   console.log(notes)
       this.setState({notes})
   }
 
