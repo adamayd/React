@@ -28,6 +28,7 @@
     "react": "15.3.2",
     "react-dom": "15.3.2",
     "react-icon-base": "^2.1.1",
-    "react-icons": "^2.2.7"
+    "react-icons": "^2.2.7",
+    "react-router": "^3.0.0"
   }
 }
