@@ -58,13 +58,13 @@ class Board extends React.Component {
       }
   }
 
-  nextId = () => {
+  nextId() {
       this.uniqueId = this.uniqueId || 0
       return this.uniqueId++
   }
 
-  add = (text) => {
-      var notes = [
+  add(text) {
+      const notes = [
           ...this.state.notes,
           {
               id: this.nextId(),
@@ -76,14 +76,14 @@ class Board extends React.Component {
   }
 
   update = (newText, id) => {
-      var notes = this.state.notes.map(
+      const notes = this.state.notes.map(
           note => (note.id !== id) ? note : {...note, note: newText}
       )
       this.setState({notes})
   }
 
   remove = (id) => {
-      var notes = this.state.notes.filter(
+      const notes = this.state.notes.filter(
           note => note.id !== id)
       this.setState({notes})
   }
