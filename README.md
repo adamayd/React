@@ -1,6 +1,6 @@
-# Features
+## Features
 
-#### WATCH OUT FOR FEATURE CREAP
+#### WATCH OUT FOR FEATURE CREEP
 
 ### Minimum Viable Product(MVP) Core Features
 
