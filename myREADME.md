@@ -33,3 +33,22 @@
 2. Profile page displays the user's information
 3. Profile page also displays a record of the user's last games
 4. User may edit their personal information
+
+## Component Guidelines
+1. Plan out components for given container
+2. Build out the components
+3. Create presentational components
+4. Hook the containers into the data store
+5. Write any mutations the containers might need to take
+
+### Containers
+* Connect to the store
+* Pass data to children
+
+### Components
+* Manage thier own state
+* Pass props to presentational components
+
+### Presentational
+* Don't manage state
+* Change styling based on props
