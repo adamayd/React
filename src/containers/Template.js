@@ -1,7 +1,7 @@
 import React from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import RaisedButton from 'material-ui/RaisedButton'
+import NavDrawer from '../components/NavDrawer'
 
 injectTapEventPlugin()
 
@@ -10,14 +10,7 @@ class Template extends React.Component {
         return (
           <MuiThemeProvider>
             <div>
-              <header>
-                <h1>Tic Tac Turing</h1>
-                <RaisedButton 
-                  label="Test Button"
-                  primary={true}
-                  onTouchTap={() => {console.log('Hello, I work')}} 
-                />
-              </header>
+              <NavDrawer />
               <main>
                 {this.props.children}
               </main>
