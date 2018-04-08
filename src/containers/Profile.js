@@ -1,13 +1,60 @@
 import React from 'react'
+import { Container, Name, GameListHeader, GameList, GameRecord, Column, ColumnLabels } from '../styled/Profile'
 
 class Profile extends React.Component {
-    render() {
-        return (
-          <div>
-            <h2>Profile!</h2>
-          </div>
-        )
+
+  static defaultProps = { 
+    user: {
+      email: 'USER_EMAIL',
+      games: [
+        {
+          winner: true,
+          createdAt: '12/25/2016',
+          id: '0001'
+        },
+        {
+          winner: true,
+          createdAt: '12/26/2016',
+          id: '0002'
+        },
+        {
+          winner: true,
+          createdAt: '12/27/2016',
+          id: '0003'
+        }
+      ]
     }
+  }
+  
+  render() {
+    let {email} = this.props.user
+    return (
+      <Container>
+        <Name>
+          {email}
+        </Name>
+        <GameList>
+          <GameListHeader>
+            My games
+          </GameListHeader>
+          <ColumnLabels>
+            <Column>
+              Outcome
+            </Column>
+            <Column>
+              Guess
+            </Column>
+            <Column>
+              Guess Correctly
+            </Column>
+            <Column>
+              Date
+            </Column>
+          </ColumnLabels>
+        </GameList>
+      </Container>
+    )
+  }
 }
 
 export default Profile
