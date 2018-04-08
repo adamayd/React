@@ -65,7 +65,7 @@ export const Squares = ({
         align={'center'}
         onClick={(event) => {
           let index = event.target.index
-          makeMove(index, ownMark)
+          makeMove(ownMark, index)
         }}
       />
     )

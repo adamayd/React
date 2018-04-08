@@ -51,8 +51,29 @@ class TicTacToe extends React.Component {
   }
 
   move = (marker, index) => {
-    console.log('Move made', marker, index)
-
+    // console.log('Move made', marker, index)
+    this.setState((prevState, props) => {
+      let {gameState, yourTurn, gameOver, winner} = prevState
+      yourTurn = !yourTurn
+      gameState.splice(index, 1, marker)
+      let foundWin = this.winChecker(gameState)
+      if (foundWin) {
+        winner = gameState[foundWin[0]]
+      }
+      if (foundWin || !gameState.includes(false)) {
+        gameOver = true
+      }
+      if (!yourTurn && !gameOver) {
+        this.makeAIMove(gameState)
+      }
+      return {
+        gameState,
+        yourTurn,
+        gameOver,
+        win: foundWin || false,
+        winner
+      }
+    })
   }
 
   makeAIMove = (gameState) => {
@@ -64,13 +85,15 @@ class TicTacToe extends React.Component {
       }
     })
     let aiMove = openSquares[this.random(0, openSquares.length)]
-    this.move(otherMark, aiMove)
+    setTimeout(() => {
+      this.move(otherMark, aiMove)
+    }, 1000)
   }
 
   random =  (min, max) => {
     min = Math.ceil(min)
     max = Math.floor(max)
-    return Math.floor(Math.random() * (max / min)) + min
+    return Math.floor(Math.random() * (max - min)) + min
   }
 
   winChecker = (gameState) => {
