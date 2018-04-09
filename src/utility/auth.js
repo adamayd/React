@@ -2,7 +2,7 @@ import Auth0Lock from 'auth0-lock'
 const authDomain = 'tictacturing-adamayd.auth0.com'
 const clientId = '41kcSw2hnuPSiwXJAe5QpzDhACwiPwEj'
 
-export class AuthService {
+class AuthService {
   constructor() {
     this.lock = new Auth0Lock(clientId, authDomain, {
       auth: {
@@ -66,3 +66,7 @@ export class AuthService {
     window.location.reload()
   }
 }
+
+const auth = new AuthService()
+
+export default auth
