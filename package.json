@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "devoverride": "webpack --mode development ./foo/src/js/index.js --output ./foo/main.js",
+    "buildoverride": "webpack --mode production ./foo/src/js/indes.js --output ./foo/main.js"
   },
   "author": "",
   "license": "ISC",
