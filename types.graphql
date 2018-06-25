@@ -13,7 +13,9 @@ type User @model {
   createdAt: DateTime!
   id: ID! @isUnique
   updatedAt: DateTime!
+  email: String!
   p1games: [Game!]! @relation(name: "Player1Games")
+  winner: [Game!]! @relation(name: "UserWins")
 }
 
 type Game @model {
@@ -23,6 +25,7 @@ type Game @model {
   p1Guess: Guesses!
   p1GuessCorrect: Boolean!
   p1player: User! @relation(name: "Player1Games")
+  winner: User! @relation(name: "UserWins")
 }
 
 enum Guesses {

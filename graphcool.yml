@@ -1,10 +1,10 @@
 types: ./types.graphql
 functions: {}
 permissions:
-- operation: File.read
-- operation: File.create
-- operation: File.update
-- operation: File.delete
+- operation: Game.read
+- operation: Game.create
+- operation: Game.update
+- operation: Game.delete
 - operation: User.read
 - operation: User.create
 - operation: User.update
