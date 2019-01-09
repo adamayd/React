@@ -22,7 +22,7 @@ class Portlet extends Component {
             <h1 className="display-3">{question.title}</h1> 
             <p className="lead">{question.description}</p>
             <hr className="my-4" />
-            <p>Answers</p>
+            <p>Messages</p>
               {
                 question.answers.map((answer, idx) => (
                   <p className="lead" key={idx}>{answer.answer}</p>
