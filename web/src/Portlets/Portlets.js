@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-class Questions extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      questions: null
-    };
-  }
+class Portlets extends Component {
+  state = {};
 
   async componentDidMount() {
     const questions = (await axios.get('http://localhost:8081/')).data;
@@ -44,4 +38,4 @@ class Questions extends Component {
   }
 }
 
-export default Questions;
+export default Portlets;
