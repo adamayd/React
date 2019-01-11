@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import NavBar from './NavBar/NavBar';
-import Portlets from './Portlets/Portlets';
-import Portlet from './Portlet/Portlet';
+import NavBar from './Components/NavBar';
+import Portlets from './Components/Portlets';
+import Portlet from './Components/Portlet';
 import Callback from './Auth/Callback';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
       <div>
         <NavBar/>
         <Route exact path='/' component={Portlets}/>
-        <Route exact path='/question/:questionId' component={Portlet}/>
+        <Route exact path='/portlet/:portletId' component={Portlet}/>
         <Route exact path='/callback' component={Callback}/>
       </div>
     );

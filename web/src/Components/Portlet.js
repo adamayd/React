@@ -2,30 +2,30 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Portlet extends Component {
-  state = {question: null};
+  state = {portlet: null};
 
   async componentDidMount() {
     const { match: { params } } = this.props;
-    const question = (await axios.get(`http://localhost:8081/${params.questionId}`)).data;
+    const portlet = (await axios.get(`http://localhost:8081/${params.portletId}`)).data;
     this.setState({
-      question
+      portlet
     });
   }
 
   render() {
-    const { question } = this.state;
-    if (question === null) return <p>Loading...</p>;
+    const { portlet } = this.state;
+    if (portlet === null) return <p>Loading...</p>;
     return (
       <div className="container">
         <div className="row">
           <div className="jumbotron col-12">
-            <h1 className="display-3">{question.title}</h1> 
-            <p className="lead">{question.description}</p>
+            <h1 className="display-3">{portlet.title}</h1> 
+            <p className="lead">{portlet.description}</p>
             <hr className="my-4" />
             <p>Messages</p>
               {
-                question.answers.map((answer, idx) => (
-                  <p className="lead" key={idx}>{answer.answer}</p>
+                portlet.messages.map((message, idx) => (
+                  <p className="lead" key={idx}>{message.message}</p>
                 ))
               }
           </div>
