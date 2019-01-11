@@ -16,6 +16,15 @@ class Portlets extends Component {
     return (
       <div className="container">
         <div className="row">
+          <Link to="/create-portlet">
+            <div className="card text-white bg-secondary mb-3">
+              <div className="card-header">Don't see the info you need?</div>
+              <div className="card-body">
+                <h4 className="card-title">+ New Portlet</h4>
+                <p className="card-text">Don't worry. Help is on the way!</p>
+              </div>
+            </div>
+          </Link>
           {this.state.portlets === null && <p>Loading portlets...</p>}
           {
             this.state.portlets && this.state.portlets.map(portlet => (
