@@ -1,0 +1,2 @@
+build/static/*  linguist-vendored
+src/css/* linguist-vendored
