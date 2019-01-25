@@ -1,0 +1,12 @@
+types: ./types.graphql
+functions: {}
+permissions:
+- operation: Game.read
+- operation: Game.create
+- operation: Game.update
+- operation: Game.delete
+- operation: User.read
+- operation: User.create
+- operation: User.update
+- operation: User.delete
+rootTokens: []
